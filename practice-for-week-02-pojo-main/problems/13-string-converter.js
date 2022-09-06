@@ -13,6 +13,25 @@ console.log(stringConverter("raccoon")); // => {r: 1, a: 1, c: 2, o: 2, n: 1}
 
 function stringConverter(string) {
   // Your code here
+
+
+  let obj = {}
+
+  for(i = 0; i < string.length; i++){
+    let key = string[i]
+    let count = 0
+    for(j = 0; j < string.length; j++){
+      let value = string[j]
+      if(value == key ){
+        count += 1
+      }
+    }
+    if(obj[key] == undefined){
+      obj[key] = count
+    }
+
+  }
+  return obj
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

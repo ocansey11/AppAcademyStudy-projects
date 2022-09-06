@@ -12,6 +12,14 @@ doesKeyExist(obj1, 'name'); // => false
 
 function doesKeyExist(obj, key) {
   // Your code here
+
+  for(i in obj){
+    if(i == key){
+      return true
+    }
+  }
+
+  return false
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -1,0 +1,60 @@
+/*******************************************************************************
+Write a function `mySimpleReduce` that accepts an array and a callback as arguments.
+The function should mimic the behavior of the built in Array#reduce, utilizing the
+first element of the array as the default accumulator.
+
+In other words, the function should begin with the first element of the array as
+the accumulator and call the callback for each of the remaining elements in the array,
+passing in the current accumulator and current element into the callback. Upon calling the callback,
+the accumulator should be set to the result of the callback.
+
+Examples:
+
+let result1 = mySimpleReduce([5, 3, 2, 4], function(sum, el) {
+    return sum + el;
+});
+console.log(result1); // 14
+
+let result2 = mySimpleReduce([4, 6, 2], function(product, el) {
+    return product * el;
+});
+console.log(result2); // 48
+
+let result3 = mySimpleReduce([4, 6, 2, 8, 3], function(max, el) {
+    if (el > max) {
+        return el;
+    } else {
+        return max;
+    }
+});
+console.log(result3); // 8
+
+AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
+- Explain, but don't code, how you would refactor this problem to take in an
+  optional initial accumulator
+*******************************************************************************/
+
+let mySimpleReduce = function(arr, cb) {
+      let accum = arr[0]
+    for( i = 1; i < arr.length; i++){
+        let el = arr[i]
+        accum = cb(accum, el)
+    }
+
+    return accum
+
+};
+
+
+//  to refactor this problem to take in an optional initial accumulator
+// we have to pass the optional initial accumulator as a third argument.
+// we use an if statement to determine if the optional argument is undefined or not.
+// If its not undefined we set the accumulator(i.e sum, product, max) to the optional value.
+
+
+
+
+
+
+/*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
+module.exports = mySimpleReduce;

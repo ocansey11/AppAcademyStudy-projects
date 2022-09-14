@@ -20,7 +20,7 @@ let peeps = [
   {name: "Winnie", score: 2},
   {name: "Fred", score: 2},
   {name: "Winnie", score: 2},
-  {name: "Fred", score: 2},
+  {name: "Fred", score: 2},S
   {name: "Anthony", score: 2},
   {name: "Winnie", score: 2}
 ];

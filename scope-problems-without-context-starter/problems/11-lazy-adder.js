@@ -24,6 +24,16 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 // your code here
 
+let lazyAdder = (firstNum) =>{
+  return function(secondNum){
+    secondNum = secondNum + firstNum
+    return function(thirdNum){
+      return thirdNum + secondNum
+    }
+  }
+}
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

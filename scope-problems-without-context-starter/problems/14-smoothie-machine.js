@@ -23,6 +23,24 @@ console.log(smoothie2("pineapple"));
 ***********************************************************************/
 
 // your code here
+let smoothieMachine = () =>{
+  let sentence = `I'm having a smoothie`;
+  let end = ''
+
+  return (...params) =>{
+    let parameters = [...params]
+    if(sentence.includes('with')){
+      for(i = 0; i < parameters.length; i++){
+        end +=  ' and ' + params[i]
+      }
+    }
+    else{
+      sentence += ' with ' + parameters[0]
+    }
+    return sentence + end
+  }
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

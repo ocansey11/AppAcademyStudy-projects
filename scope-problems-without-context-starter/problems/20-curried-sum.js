@@ -1,5 +1,4 @@
 /***********************************************************************
-
 Currying is the process of decomposing a function that takes multiple arguments
 into one that takes single arguments successively until it has the sufficient
 number of arguments to run.This technique is named after the
@@ -40,9 +39,31 @@ const sum = curriedSum(3)(2)(1)(7); // => returns 10
 AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Come up with at least two situations (one per person) on when currying would
   be useful
-***********************************************************************/
+
+***/
+
+
 
 // your code here
+let curriedSum = (numArgs) =>{
+  let numbers = []
+  let _curriedSum = (number) =>{
+    numbers.push(number)
+
+    if(numbers.length === numArgs ){
+      let total = 0
+      for(i = 0; i< numArgs; i++){
+        total += numbers[i]
+      }
+      return total
+    }
+
+    return _curriedSum
+  }
+  return _curriedSum
+
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

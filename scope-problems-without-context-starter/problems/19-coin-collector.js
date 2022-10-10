@@ -26,6 +26,17 @@ Example 3:
 ***********************************************************************/
 
 // your code here
+let coinCollector = (n) =>{
+  let newArr = []
+  return (coins) =>{
+    newArr.push(coins)
+    if(newArr.length === n){
+
+      return newArr
+    }
+  }
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

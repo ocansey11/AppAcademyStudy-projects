@@ -20,11 +20,18 @@ fibonacci(10); // 55
 ***********************************************************************/
 
 // your code here
-  
+function fibonacci(num) {
+  if(num < 2) {
+      return num;
+  }
+  else {
+      return fibonacci(num-1) + fibonacci(num - 2);
+  }
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = fibonacci;
 } catch (e) {
   module.exports = null;
 }
-  

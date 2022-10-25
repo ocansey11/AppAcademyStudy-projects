@@ -12,6 +12,20 @@ isSorted([5, 4, 3, 2, 1]); // false
 
 // your code here
 
+let isSorted = (arr) =>{
+  let first = arr[0]
+  let second = arr[1]
+  let n = arr.length
+
+  if(n === 0){
+    return true
+  }
+  if(first > second ){
+    return false
+  }
+  return isSorted(arr.slice(1))
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = isSorted;

@@ -11,7 +11,13 @@ sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
 // your code here
-  
+
+let sumArray = (arr)=>{
+  if(arr.length === 0){
+    return 0
+  }
+  return arr[0] + sumArray(arr.slice(1))
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sumArray;

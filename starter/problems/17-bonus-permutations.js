@@ -14,6 +14,26 @@ permutations([1, 2, 3]) // [[1, 2, 3], [1, 3, 2],
 
 // your code here
 
+
+let permutations = (arr) =>{
+  let results = []
+  perms = (subArr, currentArr) =>{
+    // Base case
+    if(subArr.length === 0 ){
+      console.log(results)
+      results.push(currentArr)
+    }
+
+    for(i = 0; i< subArr.length; i++ ){
+      let newSubArr = subArr.slice(0,i).concat(subArr.slice(i + 1))
+      let newCurentArr = currentArr.concat(subArr[i])
+      perms(newSubArr, newCurentArr)
+    }
+  }
+  perms(arr, [])
+  return results
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = permutations;

@@ -22,7 +22,22 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
+  // Base Case
+  if( nums.length === 0){
+    return sorted
+  }
+
+  let smallestValue = Infinity
+  for(i = 0; i < nums.length; i++){
+    if(nums[i] < smallestValue){
+      smallestValue = nums[i]
+    }
+  }
+
+// Recursive Step
+  nums.splice(nums.indexOf(smallestValue), 1)
+  sorted.push(smallestValue)
+  return (sort(nums, sorted))
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

@@ -1,7 +1,7 @@
 /***********************************************************************
 Write a function called `subsets` that will return all subsets of an array.
 
-Examples: 
+Examples:
 
 subsets([]) // [[]]
 subsets([1]) // [[], [1]]
@@ -15,10 +15,20 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 // your code here
-
+let subsets = (arr, depth = 0, subset = [], results = []) =>{
+  if(depth === arr.length){
+    results.push(subset)
+  }else{
+    subsets(arr, depth + 1, subset, results)
+  // Include
+  subsets(arr, depth + 1, [...subset, arr[depth]], results)
+  }
+  return results
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = subsets;
 } catch (e) {
+
   module.exports = null;
 }

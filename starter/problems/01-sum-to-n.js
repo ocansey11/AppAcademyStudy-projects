@@ -12,7 +12,15 @@ sumToN(-8)  // returns null
 ***********************************************************************/
 
 // your code here
-
+let sumToN = (n) =>{
+  if(n < 0){
+    return null
+  }
+  if(n === 0){
+    return n
+  }
+  return n + sumToN(n-1)
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sumToN;

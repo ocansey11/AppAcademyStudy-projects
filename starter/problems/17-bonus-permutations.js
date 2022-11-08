@@ -24,9 +24,9 @@ let permutations = (arr) =>{
       results.push(currentArr)
     }
 
-    for(i = 0; i< subArr.length; i++ ){
-      let newSubArr = subArr.slice(0,i).concat(subArr.slice(i + 1))
-      let newCurentArr = currentArr.concat(subArr[i])
+    for(let i = 0; i< subArr.length; i++ ){
+      const newSubArr = subArr.slice(0,i).concat(subArr.slice(i + 1))
+      const newCurentArr = currentArr.concat(subArr[i])
       perms(newSubArr, newCurentArr)
     }
   }

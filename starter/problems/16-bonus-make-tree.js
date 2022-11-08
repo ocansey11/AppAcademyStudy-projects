@@ -65,13 +65,10 @@ The call above should return the tree below:
 
 const makeTree = (categories, parent) => {
   // your code here
-  let obj = { }
-  let treeObj = categories[0]
-  if(categories[0].parent  === null){
-    return Object.assign(obj[treeObj.id], makeTree(categories.slice(1), treeObj.parent))
-  }
-
-  return Object.assign(obj[parent], makeTree(categories.slice(1), treeObj.parent))
+  let node = {}
+  categories.filter( el => el.parent === parent)
+  .forEach(el => node[el.id] = makeTree(categories, el.id))
+return node
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

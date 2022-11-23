@@ -30,6 +30,11 @@ class Enemy extends Character {
 
   takeSandwich() {
     // Fill this in
+    const i = this.currentRoom.items.indexOf(sandwich);
+    const item = this.currentRoom.items.splice(i, 1);
+
+    this.items.push(...item);
+    this.cooldown += 3000;
   }
 
   // Print the alert only if player is standing in the same room
@@ -82,7 +87,6 @@ class Enemy extends Character {
     this.alert(`${this.name} scratches its nose`);
   }
 }
-
 module.exports = {
   Enemy,
 };
